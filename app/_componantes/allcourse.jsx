@@ -136,7 +136,7 @@ export default function AllCourses() {
                   {course.category}
                 </span>
                 <div className="flex items-center gap-1 mb-3">
-                  {[...Array(course.rating)].map((_, i) => (
+                  {[...Array(course.rating)].map((_, i) => ( 
                     <FaStar key={i} className="text-black text-sm" />
                   ))}
                 </div>

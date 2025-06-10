@@ -1,95 +1,57 @@
-'use client';
+"use client";
+import React from "react";
+import Marquee from "react-fast-marquee";
 
-import Image from 'next/image';
-
-const row1 = ['/logo/amazone.png', '/logo/vmware.png', '/logo/ey.png'];
-const row2 = ['/logo/ibm.png', '/logo/tcs.png', '/logo/cisco.png'];
-const row3 = ['/logo/ethical den.png', '/logo/accenture.png'];
-const row4 = ['/logo/paloalto.png', '/logo/jio.png', '/logo/deloitte.png'];
-
-const scrollingRow1 = [...row1, ...row1];
-const scrollingRow2 = [...row2, ...row2];
-const scrollingRow3 = [...row3, ...row3];
-const scrollingRow4 = [...row4, ...row4];
-
-export default function StudentPlacement() {
-  const maskGradient = {
-    WebkitMaskImage:
-      'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
-    maskImage:
-      'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
-  };
-
+const Placement = () => {
   return (
-    <section className="bg-black text-white px-4 sm:px-6 md:px-10 py-16 md:py-24">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Text Section */}
-        <div>
-          <div className="inline-block group relative">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold relative leading-tight">
-              Our Student <br />
-              <span className="relative pl-1 z-10">
-                Placement
-                <span className="absolute left-1 bottom-0 h-1 w-12 bg-yellow-400 rounded transition-all duration-300 group-hover:w-40"></span>
-              </span>
-            </h2>
-          </div>
-          <p className="mt-6 text-sm sm:text-base text-gray-300 leading-relaxed">
-            Well, because we’re not your grandma’s boring old school! At Edu-Den, we’re the rebels of
-            education, the mavericks of learning, and the champions of fun-filled knowledge. We’ll teach you how to
-            slay dragons and code websites, all while cracking jokes and sipping on virtual coffee. So, why settle for
-            snooze-worthy lectures when you can join the Edu-Den revolution? Let’s make learning epic together!
-          </p>
-        </div>
+    <div className="bg-black px-4 lg:px-[100px] text-white pt-[60px] flex flex-col lg:flex-row justify-between items-center gap-10">
+      <div className="lg:mr-[100px] w-full lg:w-1/2">
+        <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl pb-5 leading-tight relative group">
+          Our Student <br />
+          <span className="relative inline-block pl-1 z-10">
+            Placement
+            <span className="absolute left-0 bottom-0 h-1 w-12 bg-yellow-400 rounded transition-all duration-300 group-hover:w-40"></span>
+          </span>
+        </h1>
 
-        {/* Logos Section */}
-        <div className="overflow-hidden space-y-6">
-          {[scrollingRow1, scrollingRow2, scrollingRow3, scrollingRow4].map((row, rowIndex) => (
-            <div
-              key={rowIndex}
-              className="flex gap-6 sm:gap-8 whitespace-nowrap"
-              style={{
-                animation: `${rowIndex % 2 === 0 ? 'scrollRight' : 'scrollLeft'} 40s linear infinite`,
-                ...maskGradient,
-              }}
-            >
-              {row.map((logo, idx) => (
-                <div
-                  key={idx}
-                  className="grayscale hover:grayscale-0 transition duration-300 shrink-0"
-                >
-                  <Image
-                    src={logo}
-                    alt={`Logo ${idx + 1}`}
-                    width={100}
-                    height={50}
-                    className="object-contain w-24 sm:w-28 md:w-32"
-                  />
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
+        <p className="text-base md:text-lg leading-relaxed">
+          Well, because we’re not your grandma’s boring old school! At Edu-Den,
+          we’re the rebels of education, the mavericks of learning, and the
+          champions of fun-filled knowledge. We’ll teach you how to slay dragons
+          and code websites, all while cracking jokes and sipping on virtual
+          coffee. So, why settle for snooze-worthy lectures when you can join
+          the Edu-Den revolution? Let’s make learning epic together! Well,
+          because we’re not your grandma’s boring old school! At Edu-Den, we’re
+          the rebels of education, the mavericks of learning.
+        </p>
       </div>
 
-      <style jsx>{`
-        @keyframes scrollLeft {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        @keyframes scrollRight {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0);
-          }
-        }
-      `}</style>
-    </section>
+      <div className="w-full lg:w-1/2 space-y-8">
+        <Marquee speed={10} loop={0} gradient={true} gradientColor={[248, 251, 253]} pauseOnHover={false}>
+          <img className="h-[25px] sm:h-[30px] mx-5" src="/logo/amazone.png" alt="Amazon" />
+          <img className="h-[22px] sm:h-[25px] mx-5" src="/logo/vmware.png" alt="VMware" />
+          <img className="h-[30px] sm:h-[40px] mx-5" src="/logo/ey.png" alt="EY" />
+        </Marquee>
+
+        <Marquee speed={10} loop={0} gradient={false} pauseOnHover={true} direction="right">
+          <img className="h-[25px] sm:h-[30px] mx-5" src="/logo/ibm.png" alt="IBM" />
+          <img className="h-[25px] sm:h-[30px] mx-5" src="/logo/tcs.png" alt="TCS" />
+          <img className="h-[25px] sm:h-[30px] mx-5" src="/logo/cisco.png" alt="Cisco" />
+        </Marquee>
+
+        <Marquee speed={10} loop={0} gradient={false} pauseOnHover={true}>
+          <img className="h-[25px] sm:h-[30px] mx-5" src="/logo/amazone.png" alt="Amazon" />
+          <img className="h-[25px] sm:h-[30px] mx-5" src="/logo/accenture.png" alt="Accenture" />
+        </Marquee>
+
+        <Marquee speed={10} gradient={false} pauseOnHover={true} loop={0} direction="right">
+          <img className="h-[25px] sm:h-[30px] mx-5" src="/logo/paloalto.png" alt="Palo Alto" />
+          <img className="h-[25px] sm:h-[30px] mx-5" src="/logo/vmware.png" alt="VMware" />
+          <img className="h-[25px] sm:h-[30px] mx-5" src="/logo/deloitte.png" alt="Deloitte" />
+        </Marquee>
+      </div>
+    </div>
   );
-}
+};
+
+export default Placement;

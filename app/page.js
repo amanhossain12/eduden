@@ -22,13 +22,13 @@ const page = () => {
       <Aboutsec/>
       <CourseCategories/>
       <StudentPlacement/>
-      {/* <AllCourses/>
+      <AllCourses/>
       <Videopic/>
       <Collaboration/>
       <UpcomingEvents/>
       <TestimonialSection/>
       <FaqSection/>
-      <Footer/> */}
+      <Footer/>
     </div>
   )
 }
