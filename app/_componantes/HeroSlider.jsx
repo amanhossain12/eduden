@@ -116,17 +116,16 @@ const HeroSlider = () => {
       </Swiper>
 
       
-   
-{/* Social Media Sidebar */}
-<div className="absolute top-1/2 -translate-y-1/3 right-3 sm:right-4 md:right-6 z-30 group">
-  <div className="bg-yellow-400 text-black flex flex-col items-center justify-between px-2 py-4 rounded-full space-y-5 h-64 sm:h-72 w-10 sm:w-12 shadow-lg transition-transform duration-300 group-hover:scale-105">
-    {/* Rotated text - bottom to top */}
-    <div className="transform rotate-90 text-[10px] sm:text-[11px] font-bold tracking-wider whitespace-nowrap">
+<div className="absolute top-1/2 -translate-y-1/3 pr-10 right-3 sm:right-4 md:right-6 z-30 group">
+  <div className="bg-yellow-400 text-black flex flex-col items-center justify-between py-12 rounded-full h-64 sm:h-72 w-10 sm:w-12 shadow-lg transition-transform duration-300 group-hover:scale-105">
+    
+    {/* Rotated Text */}
+    <div className="transform rotate-90 text-[10px] sm:text-[11px] font-bold tracking-wider whitespace-nowrap mb-4">
       FOLLOW NOW →
     </div>
 
     {/* Social Icons */}
-    <div className="flex flex-col items-center space-y-4 text-black text-sm">
+    <div className="flex flex-col items-center space-y-5 text-black text-sm">
       <Link href="#" aria-label="Facebook">
         <FaFacebookF className="hover:scale-110 transition-transform duration-200" />
       </Link>
@@ -142,6 +141,7 @@ const HeroSlider = () => {
     </div>
   </div>
 </div>
+
 
 
     </div>
