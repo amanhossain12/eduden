@@ -1,4 +1,6 @@
+"use client";
 import Image from 'next/image';
+import Marquee from "react-fast-marquee";
 
 export default function Collaboration() {
   return (
@@ -9,12 +11,17 @@ export default function Collaboration() {
           {/* Collaboration Text */}
           <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-12">
             <p className="text-yellow-400 uppercase text-sm">Our Partner</p>
-            <h2 className="text-3xl sm:text-4xl font-bold">
-              Our{' '}
-              <span className="text-yellow-400 underline decoration-yellow-400 underline-offset-4">
-                Collaboration
-              </span>
-            </h2>
+
+            <div className="inline-block group">
+              <h2 className="text-3xl sm:text-4xl font-bold">
+                Our{' '}
+                <span className="text-yellow-400 relative">
+                  Collaboration
+                  <span className="block h-1 bg-yellow-400 w-20 mt-1 transition-all duration-300 group-hover:w-75 rounded-full"></span>
+                </span>
+              </h2>
+            </div>
+
             <p className="mt-4 sm:mt-6 text-sm sm:text-base text-gray-300 leading-relaxed">
               Well, because we’re not your grandma’s boring old school! At Edu-Den, we’re the rebels of
               education, the mavericks of learning, and the champions of fun-filled knowledge. We’ll teach
@@ -24,18 +31,29 @@ export default function Collaboration() {
             </p>
           </div>
 
-          {/* Partner Logos */}
-          <div className="flex flex-wrap justify-center items-center gap-10 sm:gap-16 md:gap-24 lg:gap-32">
-            <Image src="/logo/ethical den.png" alt="Ethical Den" width={160} height={50} />
-            <Image src="/group 150.png" alt="Fowzi Media" width={160} height={50} />
-            <Image src="/layer-1.png" alt="Randomuse" width={130} height={50} />
-            <Image src="/layer-2.png" alt="Intellects.exe" width={130} height={50} />
+          {/* Partner Logos Marquee */}
+          <div className="w-full space-y-8">
+            <div>
+              <Marquee
+                speed={30}
+                loop={0}
+                autoFill = "true"
+                gradient={false}
+                pauseOnHover={true}
+                className="flex items-center"
+              >
+                <Image className="h-[25px] sm:h-[30px] mx-5" src="/group 150.png" alt="Fowzi Media" width={120} height={30} />
+                <Image className="h-[22px] sm:h-[25px] mx-5" src="/layer-2.png" alt="Intellects.exe" width={110} height={30} />
+                <Image className="h-[30px] sm:h-[40px] mx-5" src="/layer-1.png" alt="Randomuse" width={120} height={30} />
+                <Image className="h-[30px] sm:h-[40px] mx-5" src="/logo/ethical den.png" alt="Ethical Den" width={120} height={30} />
+              </Marquee>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Hero Section */}
-      <section className="relative w-full h-[80vh] sm:h-screen mt-20 sm:mt-32 mb-20 sm:mb-40 bg-black text-white flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[60vh] sm:h-screen mt-20 sm:mt-32 mb-20 sm:mb-40 bg-black text-white flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image

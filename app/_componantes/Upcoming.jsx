@@ -43,10 +43,10 @@ export default function UpcomingEvents() {
   ];
 
   return (
-    <section className="bg-black text-white px-6 py-16">
+    <section className="bg-black text-white px-4 sm:px-8 md:px-12 lg:px-24 py-16">
       <div className="max-w-7xl mx-auto text-center">
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
+        <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
           Upcoming <span className="underline decoration-yellow-400">Events</span>
         </h2>
         <p className="max-w-2xl mx-auto text-gray-300 mb-12 text-sm md:text-base">
@@ -56,14 +56,14 @@ export default function UpcomingEvents() {
         </p>
 
         {/* Cards Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {events.map((event, index) => (
             <div
               key={index}
               className="relative rounded-xl overflow-hidden shadow-lg group transition duration-300 transform hover:scale-105 hover:shadow-2xl"
             >
               {/* Background Image */}
-              <div className="relative h-[513px] w-full">
+              <div className="relative h-[350px] md:h-[450px] w-full">
                 <Image
                   src={event.image}
                   alt={event.title}
@@ -74,12 +74,12 @@ export default function UpcomingEvents() {
               </div>
 
               {/* Event Info */}
-              <div className="absolute bottom-0 w-full px-10 pb-10 text-white z-10 flex flex-col items-center text-center">
-                <h3 className="text-2xl font-bold">{event.title}</h3>
-                <p className="text-sm text-white mt-3 leading-snug">
+              <div className="absolute bottom-0 w-full px-6 md:px-10 pb-10 text-white z-10 flex flex-col items-center text-center">
+                <h3 className="text-xl md:text-2xl font-bold">{event.title}</h3>
+                <p className="text-xs md:text-sm text-white mt-3 leading-snug">
                   Fermentum fusce himenaeos neque condimentum maecenas vitae congue iaculis inceptos ullamcorper habitasse
                 </p>
-                <div className="flex items-center  pt-12 gap-7 text-xs mt-3 text-white">
+                <div className="flex items-center pt-8 gap-5 text-xs mt-3 text-white">
                   <span>⏱ {event.duration}</span>
                   <span>📅 {event.date}</span>
                 </div>

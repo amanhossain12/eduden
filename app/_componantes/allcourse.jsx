@@ -1,4 +1,5 @@
 'use client';
+
 import Image from 'next/image';
 import { useState } from 'react';
 import { FaStar, FaUser, FaClock, FaComment } from 'react-icons/fa';
@@ -97,25 +98,28 @@ export default function AllCourses() {
       : courses.filter((course) => course.category === selectedCategory);
 
   return (
-    <section className="bg-black text-white px-6 py-16">
+    <section className="bg-black text-white py-16 px-4 sm:px-6 lg:px-8 2xl:px-10">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10">
+        <div className="mb-10 text-center">
           <p className="text-yellow-400 uppercase text-sm">Popular Courses</p>
-          <h2 className="text-4xl font-bold">
-            All <span className="text-yellow-400">Courses</span>
-          </h2>
+          <div className="group inline-block">
+            <h2 className="text-3xl sm:text-4xl font-bold">
+              All <span className="text-yellow-400">Courses</span>
+            </h2>
+            <div className="h-1 bg-yellow-400 w-20 mx-auto mt-2 transition-all duration-300 group-hover:w-40 rounded-full"></div>
+          </div>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        <div className="flex flex-wrap justify-start gap-3 mb-10">
           {allCategories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-1 rounded-full text-sm font-semibold border transition-all duration-300 ${
                 selectedCategory === cat
-                  ? 'bg-blue-500 text-white'
-                  : 'border-white text-white hover:bg-white hover:text-black'
+                  ? 'bg-yellow-500 text-black'
+                  : 'border-white text-white hover:bg-yellow-400 hover:text-black'
               }`}
             >
               {cat}
@@ -124,7 +128,7 @@ export default function AllCourses() {
         </div>
 
         {/* Course Cards */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredCourses.map((course) => (
             <div
               key={course.id}
@@ -136,7 +140,7 @@ export default function AllCourses() {
                   {course.category}
                 </span>
                 <div className="flex items-center gap-1 mb-3">
-                  {[...Array(course.rating)].map((_, i) => ( 
+                  {[...Array(course.rating)].map((_, i) => (
                     <FaStar key={i} className="text-black text-sm" />
                   ))}
                 </div>
@@ -144,11 +148,11 @@ export default function AllCourses() {
                   Introduce About {course.title}
                 </h3>
                 <p className="text-sm text-black mb-4 h-40 overflow-y-auto">
-                  we’re your one-stop destination for unlocking your potential and conquering the digital. we’re your one-stop destination for unlocking your potential and conquering the digital. we’re your one-stop destination for unlocking your potential and conquering the digital.
+                  we’re your one-stop destination for unlocking your potential and conquering the digital.
                 </p>
                 <div className="flex justify-between items-center text-black text-sm font-semibold">
                   <button className="bg-black text-white px-4 py-2 rounded-full">Enroll Now</button>
-                  <span className="text-black font-bold">{course.price}</span>
+                  <span className="font-bold">{course.price}</span>
                 </div>
                 <div className="flex justify-between text-black text-sm border-t pt-4 mt-4">
                   <div className="flex items-center gap-1">
