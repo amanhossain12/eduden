@@ -110,8 +110,23 @@ export default function AllCourses() {
           </div>
         </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-start gap-3 mb-10">
+        {/* Category Filter for sm–lg (Dropdown) */}
+        <div className="block xl:hidden mb-10">
+          <select
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="bg-black border border-yellow-400 text-white px-4 py-2 rounded-full w-full sm:w-auto"
+          >
+            {allCategories.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Category Filter for xl and up (Button group) */}
+        <div className="hidden xl:flex flex-wrap justify-start gap-3 mb-10">
           {allCategories.map((cat) => (
             <button
               key={cat}
@@ -128,7 +143,7 @@ export default function AllCourses() {
         </div>
 
         {/* Course Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6">
           {filteredCourses.map((course) => (
             <div
               key={course.id}
@@ -173,9 +188,9 @@ export default function AllCourses() {
                   src={course.image}
                   alt={course.title}
                   fill
-                  className="object-cover"
+                  className="object-cover "
                 />
-                <div className="absolute bottom-4 right-4 bg-yellow-400 text-black font-bold text-lg px-4 py-2 rounded-full shadow-md">
+                <div className="absolute  bottom-4 right-4 bg-yellow-400 text-black font-bold text-lg px-4 py-6 rounded-full shadow-md">
                   {course.price}
                 </div>
               </div>

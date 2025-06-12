@@ -21,7 +21,7 @@ const HeroSlider = () => {
       >
         {[1, 2, 3].map((_, index) => (
           <SwiperSlide key={index}>
-            <div className="relative w-full h-[70vh] sm:h-[80vh] md:h-[85vh] lg:h-[90vh] 2xl:h-[95vh] text-white overflow-hidden group">
+            <div className="relative w-full h-[70vh] sm:h-[80vh] sm:pt[50px] md:h-[85vh] md:pt[50px] lg:h-[90vh] 2xl:h-[95vh] text-white overflow-hidden group">
               
               {/* Image Hover Zoom Wrapper */}
               <div className="absolute inset-0 transition-transform duration-700 ease-in-out group-hover:scale-105">

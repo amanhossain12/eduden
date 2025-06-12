@@ -22,10 +22,9 @@ const Navbar = () => {
           />
         </div>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-4 sm:space-x-6 lg:space-x-8 xl:space-x-10 text-sm lg:text-base 2xl:text-lg font-medium">
-      <Link href="#" className="hover:text-yellow-400 no-underline">Home</Link>
-
+        {/* Desktop Menu - show only on large and above */}
+        <div className="hidden lg:flex items-center space-x-4 sm:space-x-6 lg:space-x-8 xl:space-x-10 text-sm lg:text-base 2xl:text-lg font-medium">
+          <Link href="#" className="hover:text-yellow-400 no-underline">Home</Link>
           <Link href="#" className="hover:text-yellow-400">About Us</Link>
           <div className="relative group">
             <Link href="#" className="hover:text-yellow-400 flex items-center gap-1">
@@ -42,7 +41,7 @@ const Navbar = () => {
         </div>
 
         {/* Enroll Button (Desktop) */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Link
             href="#"
             className="border border-yellow-400 text-white hover:bg-yellow-500 hover:text-black px-4 py-2 lg:px-6 lg:py-2.5 rounded-full text-sm lg:text-base transition"
@@ -51,18 +50,18 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile/Tablet Menu Toggle - show on md and below */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white focus:outline-none"
+          className="lg:hidden text-white focus:outline-none"
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile/Tablet Dropdown Menu - show when toggled */}
       {isOpen && (
-        <div className="md:hidden mt-4 flex flex-col items-start space-y-4 px-4 text-sm">
+        <div className="lg:hidden mt-4 flex flex-col items-start space-y-4 px-4 text-sm">
           <Link href="#" className="hover:text-yellow-400">Home</Link>
           <Link href="#" className="hover:text-yellow-400">About Us</Link>
           <Link href="#" className="hover:text-yellow-400">Courses</Link>

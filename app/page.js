@@ -16,7 +16,6 @@ import Footer from './_componantes/footer';
 const Page = () => {
   return (
     <div className="bg-black text-white w-full">
-      {/* ✅ Unified container with proper padding and max width */}
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10">
         
         {/* Navbar */}
@@ -25,50 +24,49 @@ const Page = () => {
         </div>
 
         {/* Hero Slider */}
-        <div className="pt-4 ">
+        <div className="pt-4">
           <HeroSlider />
         </div>
 
-        {/* About Section with top gap */}
-        <div className="mt-[150px] ">
+        {/* About Section */}
+        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
           <Aboutsec />
         </div>
 
-        {/* Other sections, each spaced 150px from previous */}
-        <div className="mt-[150px]">
+        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
           <CourseCategories />
         </div>
 
-        <div className="mt-[150px]">
+        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
           <StudentPlacement />
         </div>
 
-        <div className="mt-[150px]">
+        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
           <AllCourses />
         </div>
 
-        <div className="mt-[150px]">
+        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
           <Videopic />
         </div>
 
-        <div className="mt-[150px]">
+        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
           <Collaboration />
         </div>
 
-        <div className="mt-[150px]">
+        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
           <UpcomingEvents />
         </div>
 
-        <div className="mt-[150px]">
+        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
           <TestimonialSection />
         </div>
 
-        <div className="mt-[150px]">
+        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
           <FaqSection />
         </div>
 
-        {/* Footer with top gap */}
-        <div className="mt-[150px]">
+        {/* Footer */}
+        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
           <Footer />
         </div>
       </div>

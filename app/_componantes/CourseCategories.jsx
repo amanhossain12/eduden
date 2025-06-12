@@ -63,7 +63,7 @@ const categories = [
 
 export default function CourseCategories() {
   return (
-    <section className="bg-black text-white  sm:px-6 md:px-10 lg:px-16">
+    <section className="bg-black text-white sm:pt[75px] md:pt[75px] sm:px-6 md:px-10 lg:px-16">
       <div className="max-w-6xl mx-auto text-center">
         <p className="text-yellow-400 uppercase text-sm mb-2">Popular Categories</p>
         <h2 className="text-3xl sm:text-4xl font-bold mb-10">
@@ -71,7 +71,7 @@ export default function CourseCategories() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 xs:grid-cols-2  gap-0.5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+      <div className="grid grid-cols-1 xs:grid-cols-2  gap-0.5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 ">
         {categories.map((cat, idx) => (
           <div
             key={idx}
