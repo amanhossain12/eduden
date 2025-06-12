@@ -37,4 +37,18 @@ body {
   background-color: white !important;
   opacity: 1;
 }
+.swiper-with-bottom-nav .swiper-button-next,
+.swiper-with-bottom-nav .swiper-button-prev {
+  top: auto !important;
+  bottom: 25px !important; /* adjust if needed */
+  z-index: 20;
+  color: white;
+}
 
+.swiper-with-bottom-nav .swiper-button-prev {
+  left: 20px !important;
+}
+
+.swiper-with-bottom-nav .swiper-button-next {
+  right: 20px !important;
+}

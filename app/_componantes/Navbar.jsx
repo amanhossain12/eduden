@@ -9,8 +9,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-black text-white w-full px-4 sm:px-6 lg:px-10 2xl:px-16 py-4">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+    <nav className="bg-black text-white w-full py-4">
+      <div className="max-w-auto mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
           <Image
@@ -18,11 +18,11 @@ const Navbar = () => {
             alt="Eduden Logo"
             width={180}
             height={60}
-            className="w-[110px] sm:w-[140px] lg:w-[160px] 2xl:w-[180px] object-contain"
+            className="w-[100px] sm:w-[140px] lg:w-[160px] 2xl:w-[180px] object-contain"
           />
         </div>
 
-        {/* Desktop Menu - show only on large and above */}
+        {/* Desktop Menu */}
         <div className="hidden lg:flex items-center space-x-4 sm:space-x-6 lg:space-x-8 xl:space-x-10 text-sm lg:text-base 2xl:text-lg font-medium">
           <Link href="#" className="hover:text-yellow-400 no-underline">Home</Link>
           <Link href="#" className="hover:text-yellow-400">About Us</Link>
@@ -50,7 +50,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile/Tablet Menu Toggle - show on md and below */}
+        {/* Mobile Menu Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="lg:hidden text-white focus:outline-none"
@@ -59,9 +59,9 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile/Tablet Dropdown Menu - show when toggled */}
+      {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="lg:hidden mt-4 flex flex-col items-start space-y-4 px-4 text-sm">
+        <div className="lg:hidden mt-4 flex flex-col items-start space-y-4 text-sm max-w-7xl mx-auto">
           <Link href="#" className="hover:text-yellow-400">Home</Link>
           <Link href="#" className="hover:text-yellow-400">About Us</Link>
           <Link href="#" className="hover:text-yellow-400">Courses</Link>

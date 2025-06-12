@@ -4,9 +4,9 @@ import Marquee from "react-fast-marquee";
 
 const Placement = () => {
   return (
-    <div className="bg-black  lg:px-[100px] text-white pt-[60px] flex flex-col lg:flex-row justify-between items-center gap-10">
+    <div className="bg-black text-white pt-[60px]  flex flex-col lg:flex-row justify-between items-center gap-10">
       {/* Left Section: Heading and Text */}
-      <div className="lg:mr-[100px] w-full lg:w-1/2">
+      <div className="w-full lg:w-1/2">
         <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl pb-5 leading-tight relative group">
           Our Student <br />
           <span className="relative inline-block pl-1 z-10">

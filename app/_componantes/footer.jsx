@@ -6,8 +6,8 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-10 px-4 sm:px-6 lg:px-10 xl:px-24">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+    <footer className="bg-black text-white py-10">
+      <div className="max-w-full   mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         {/* Logo + Description */}
         <div>
           <Image src="/logo.png" alt="Eduden Logo" width={140} height={50} className="mb-2" />
@@ -28,7 +28,7 @@ const Footer = () => {
           <ul className="space-y-2 text-sm text-gray-300">
             {['Home', 'About', 'Courses', 'Contact'].map((item, index) => (
               <li key={index}>
-                <Link href="#" className=''> {item}</Link>
+                <Link href="#">{item}</Link>
               </li>
             ))}
           </ul>

@@ -5,20 +5,17 @@ import React from 'react';
 const Aboutsec = () => {
   return (
     <section className="bg-black text-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-start md:justify-between gap-10">
+      <div className="flex flex-col md:flex-row items-start justify-between gap-10 w-full">
         {/* Left Section */}
         <div className="md:w-1/2 w-full">
           <div className="group relative w-full">
-            {/* Layout: Row on sm–lg, Column on xl+ */}
             <div className="flex flex-row xl:flex-col items-start gap-4 xl:gap-6">
-              {/* Heading */}
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold relative leading-tight w-fit">
                 <span className="relative z-10">About</span>
                 <span className="absolute left-0 -bottom-1 h-1 w-12 bg-yellow-400 transition-all duration-300 group-hover:w-40"></span>
                 <span> Us</span>
               </h2>
 
-              {/* Button: Position stays same, layout changes based on screen */}
               <button className="border border-yellow-400 text-sm px-5 py-3 rounded-full hover:bg-yellow-400 hover:text-black transition duration-300 whitespace-nowrap">
                 Read More →
               </button>
@@ -27,7 +24,7 @@ const Aboutsec = () => {
         </div>
 
         {/* Right Section */}
-        <div className="md:w-1/2 space-y-5 text-sm sm:text-base leading-relaxed text-gray-300">
+        <div className="md:w-1/2 w-full space-y-5 text-sm sm:text-base leading-relaxed text-gray-300">
           <p>
             Well, because we’re not your grandma’s boring old school! At Edu-Den, we’re the rebels of
             education, the mavericks of learning, and the champions of fun-filled knowledge. We’ll

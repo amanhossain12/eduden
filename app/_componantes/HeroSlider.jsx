@@ -10,7 +10,7 @@ import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/f
 
 const HeroSlider = () => {
   return (
-    <div className="relative  bg-black">
+    <div className="relative bg-black">
       {/* Swiper Slider */}
       <Swiper
         modules={[Navigation, Autoplay, Pagination]}
@@ -18,11 +18,13 @@ const HeroSlider = () => {
         autoplay={{ delay: 4000 }}
         loop
         pagination={{ clickable: true }}
+        
+        className="swiper-with-bottom-nav"
+
       >
         {[1, 2, 3].map((_, index) => (
           <SwiperSlide key={index}>
-            <div className="relative w-full h-[70vh] sm:h-[80vh] sm:pt[50px] md:h-[85vh] md:pt[50px] lg:h-[90vh] 2xl:h-[95vh] text-white overflow-hidden group">
-              
+            <div className="relative h-[70vh] sm:h-[80vh] md:h-[85vh] lg:h-[90vh] 2xl:h-[95vh] text-white overflow-hidden group">
               {/* Image Hover Zoom Wrapper */}
               <div className="absolute inset-0 transition-transform duration-700 ease-in-out group-hover:scale-105">
                 <Image
@@ -86,7 +88,7 @@ const HeroSlider = () => {
       </Swiper>
 
       {/* FOLLOW NOW Sidebar (Desktop/Tablet) */}
-      <div className="hidden sm:flex flex-col items-center absolute top-1/2 right-2 sm:right-4 md:right-6 lg:right-8 2xl:right-12 -translate-y-1/2 z-30">
+      <div className="hidden sm:flex flex-col items-center absolute top-1/2 right-2 sm:right-4 md:right-6 lg:right-10 2xl:right-16 -translate-y-1/2 z-30">
         <div className="bg-yellow-400 text-black flex flex-col items-center justify-between py-10 sm:py-12 rounded-full h-56 sm:h-64 2xl:h-72 w-8 sm:w-10 2xl:w-12 shadow-lg border border-black transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
           <div className="flex items-center justify-center rotate-90 text-[10px] sm:text-xs font-bold tracking-wider whitespace-nowrap mb-4">
             FOLLOW NOW
@@ -97,18 +99,10 @@ const HeroSlider = () => {
             />
           </div>
           <div className="flex flex-col items-center space-y-4 text-black text-sm 2xl:text-base">
-            <Link href="#" aria-label="Facebook">
-              <FaFacebookF className="hover:scale-110 transition-transform duration-200" />
-            </Link>
-            <Link href="#" aria-label="Instagram">
-              <FaInstagram className="hover:scale-110 transition-transform duration-200" />
-            </Link>
-            <Link href="#" aria-label="YouTube">
-              <FaYoutube className="hover:scale-110 transition-transform duration-200" />
-            </Link>
-            <Link href="#" aria-label="LinkedIn">
-              <FaLinkedinIn className="hover:scale-110 transition-transform duration-200" />
-            </Link>
+            <Link href="#"><FaFacebookF className="hover:scale-110 transition-transform duration-200" /></Link>
+            <Link href="#"><FaInstagram className="hover:scale-110 transition-transform duration-200" /></Link>
+            <Link href="#"><FaYoutube className="hover:scale-110 transition-transform duration-200" /></Link>
+            <Link href="#"><FaLinkedinIn className="hover:scale-110 transition-transform duration-200" /></Link>
           </div>
         </div>
       </div>
@@ -124,18 +118,10 @@ const HeroSlider = () => {
           />
         </div>
         <div className="flex gap-4 text-black text-base">
-          <Link href="#" aria-label="Facebook">
-            <FaFacebookF />
-          </Link>
-          <Link href="#" aria-label="Instagram">
-            <FaInstagram />
-          </Link>
-          <Link href="#" aria-label="YouTube">
-            <FaYoutube />
-          </Link>
-          <Link href="#" aria-label="LinkedIn">
-            <FaLinkedinIn />
-          </Link>
+          <Link href="#"><FaFacebookF /></Link>
+          <Link href="#"><FaInstagram /></Link>
+          <Link href="#"><FaYoutube /></Link>
+          <Link href="#"><FaLinkedinIn /></Link>
         </div>
       </div>
     </div>

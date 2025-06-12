@@ -6,7 +6,7 @@ export default function VideoSection() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section className="relative w-auto  h-[60vh] sm:h-screen mt-24 sm:mt-40  flex items-center justify-center overflow-hidden">
+    <section className="relative w-auto  h-[50vh] sm:h-screen mt-24 sm:mt-40  flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <Image
         src="/video-pic.jpg" // Replace with your image path

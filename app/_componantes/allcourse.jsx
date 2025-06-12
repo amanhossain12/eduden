@@ -5,7 +5,8 @@ import { useState } from 'react';
 import { FaStar, FaUser, FaClock, FaComment } from 'react-icons/fa';
 
 const courses = [
-  {
+  // ... same as before ...
+    {
     id: 1,
     category: 'UI/UX Design',
     title: 'UI/UX Design for Web and Mobile for Kids',
@@ -98,8 +99,8 @@ export default function AllCourses() {
       : courses.filter((course) => course.category === selectedCategory);
 
   return (
-    <section className="bg-black text-white py-16 px-4 sm:px-6 lg:px-8 2xl:px-10">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-black  text-white py-16">
+      <div className="w-full">
         <div className="mb-10 text-center">
           <p className="text-yellow-400 uppercase text-sm">Popular Courses</p>
           <div className="group inline-block">
@@ -110,23 +111,24 @@ export default function AllCourses() {
           </div>
         </div>
 
-        {/* Category Filter for sm–lg (Dropdown) */}
-        <div className="block xl:hidden mb-10">
-          <select
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            className="bg-black border border-yellow-400 text-white px-4 py-2 rounded-full w-full sm:w-auto"
-          >
-            {allCategories.map((cat) => (
-              <option key={cat} value={cat}>
-                {cat}
-              </option>
-            ))}
-          </select>
-        </div>
+        {/* Dropdown Filter for small to large screens */}
+    <div className="block xl:hidden mb-10 px-4">
+  <select
+    value={selectedCategory}
+    onChange={(e) => setSelectedCategory(e.target.value)}
+    className="bg-black border border-yellow-400 text-white px-4 py-2 rounded-full w-full"
+  >
+    {allCategories.map((cat) => (
+      <option key={cat} value={cat}>
+        {cat}
+      </option>
+    ))}
+  </select>
+</div>
 
-        {/* Category Filter for xl and up (Button group) */}
-        <div className="hidden xl:flex flex-wrap justify-start gap-3 mb-10">
+
+        {/* Button Filter for xl and up */}
+        <div className="hidden xl:flex flex-wrap gap-3 mb-10 px-4">
           {allCategories.map((cat) => (
             <button
               key={cat}
@@ -143,7 +145,7 @@ export default function AllCourses() {
         </div>
 
         {/* Course Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4">
           {filteredCourses.map((course) => (
             <div
               key={course.id}
@@ -188,9 +190,9 @@ export default function AllCourses() {
                   src={course.image}
                   alt={course.title}
                   fill
-                  className="object-cover "
+                  className="object-cover"
                 />
-                <div className="absolute  bottom-4 right-4 bg-yellow-400 text-black font-bold text-lg px-4 py-6 rounded-full shadow-md">
+                <div className="absolute bottom-4 right-4 bg-yellow-400 text-black font-bold text-lg px-4 py-6 rounded-full shadow-md">
                   {course.price}
                 </div>
               </div>

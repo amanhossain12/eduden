@@ -43,20 +43,20 @@ export default function UpcomingEvents() {
   ];
 
   return (
-    <section className="bg-black text-white px-4 sm:px-8 md:px-12 lg:px-24 py-16">
-      <div className="max-w-7xl mx-auto text-center">
+    <section className="bg-black  text-white py-16">
+      <div className="w-full text-center">
         {/* Heading */}
         <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
           Upcoming <span className="underline decoration-yellow-400">Events</span>
         </h2>
-        <p className="max-w-2xl mx-auto text-gray-300 mb-12 text-sm md:text-base">
+        <p className="max-w-2xl mx-auto text-gray-300 mb-12 text-sm md:text-base px-2">
           Well, because we’re not your grandma’s boring old school! At Edu-Den, we’re the rebels of education, the
           mavericks of learning, and the champions of fun-filled knowledge. We’ll teach you how to slay dragons and code
           websites, all while cracking jokes and sipping on virtual coffee.
         </p>
 
         {/* Cards Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 px-2">
           {events.map((event, index) => (
             <div
               key={index}
@@ -74,7 +74,7 @@ export default function UpcomingEvents() {
               </div>
 
               {/* Event Info */}
-              <div className="absolute bottom-0 w-full px-6 md:px-10 pb-10 text-white z-10 flex flex-col items-center text-center">
+              <div className="absolute bottom-0 w-full px-4 sm:px-6 pb-10 text-white z-10 flex flex-col items-center text-center">
                 <h3 className="text-xl md:text-2xl font-bold">{event.title}</h3>
                 <p className="text-xs md:text-sm text-white mt-3 leading-snug">
                   Fermentum fusce himenaeos neque condimentum maecenas vitae congue iaculis inceptos ullamcorper habitasse

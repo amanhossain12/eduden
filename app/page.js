@@ -12,61 +12,68 @@ import UpcomingEvents from './_componantes/Upcoming';
 import TestimonialSection from './_componantes/TestimonialSection';
 import FaqSection from './_componantes/FaqSection';
 import Footer from './_componantes/footer';
+import Girl from './_componantes/Girl';
 
 const Page = () => {
   return (
     <div className="bg-black text-white w-full">
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10">
-        
-        {/* Navbar */}
+      {/* Padded content wrapper */}
+      <div className="px-[20px] sm:px-[40px] md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[100px]">
         <div className="py-4">
           <Navbar />
         </div>
 
-        {/* Hero Slider */}
         <div className="pt-4">
           <HeroSlider />
         </div>
 
-        {/* About Section */}
-        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
+        <div className="mt-[100px]">
           <Aboutsec />
         </div>
 
-        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
+        <div className="mt-[100px]">
           <CourseCategories />
         </div>
 
-        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
+        <div className="mt-[100px]">
           <StudentPlacement />
         </div>
 
-        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
+        <div className="mt-[100px]">
           <AllCourses />
         </div>
+      </div>
 
-        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
-          <Videopic />
-        </div>
+      {/* ❗ Videopic full width (outside padding) */}
+      <div className="mt-[100px]">
+        <Videopic />
+      </div>
 
-        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
+      {/* Back to padded content */}
+      <div className="px-[20px] sm:px-[40px] md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[100px]">
+        <div className="mt-[100px]">
           <Collaboration />
         </div>
+      </div>
 
-        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
+      {/* ❗ Girl section full width */}
+      <Girl />
+
+      {/* Back to padded content */}
+      <div className="px-[20px] sm:px-[40px] md:px-[60px] lg:px-[80px] xl:px-[100px] 2xl:px-[100px]">
+        <div className="mt-[100px]">
           <UpcomingEvents />
         </div>
 
-        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
+        <div className="mt-[100px]">
           <TestimonialSection />
         </div>
 
-        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
+        <div className="mt-[100px]">
           <FaqSection />
         </div>
 
-        {/* Footer */}
-        <div className="mt-[50px] sm:mt-[50px] md:mt-[100px] lg:mt-[150px] xl:mt-[200px] 2xl:mt-[250px]">
+        <div className="mt-[100px]">
           <Footer />
         </div>
       </div>
