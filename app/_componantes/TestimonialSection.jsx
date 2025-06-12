@@ -1,136 +1,175 @@
-'use client';
+'use client'
 
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
+// Sample testimonial data
 const testimonials = [
   {
-    quote:
-      'Ex urna finibus natoque auctor pretium etiam consequat eleifend himenaeos mauris placerat ridiculus odio praesent.',
-    name: 'Nazmul Islam',
-    role: 'Graphic Designer',
-    image: '/user.jpg',
-    rating: 5,
+    id: 1,
+    quote: "Ex urna finibus natoque auctor pretium etiam consequat eleifend himenaeos mauris placerat ridiculus odio praesent Ex urna finibus natoque auctor pretium etiam consequat eleifend himenaeos mauris placerat ridiculus odio praesentEx urna finibus natoque auctor pretium etiam consequat eleifend himenaeos mauris placerat ridiculus odio praesent",
+    name: "Nazmul Islam",
+    role: "Graphic Designer",
+    image: "/user.jpg",
   },
   {
-    quote:
-      'Fermentum fusce himenaeos neque condimentum maecenas vitae congue iaculis inceptos ullamcorper habitasse.',
-    name: 'Ayesha Khan',
-    role: 'UI/UX Designer',
-    image: '/user.jpg',
-    rating: 5,
+    id: 2,
+    quote: "Ex urna finibus natoque auctor pretium etiam consequat eleifend himenaeos mauris placerat ridiculus odio praesent Ex urna finibus natoque auctor pretium etiam consequat eleifend himenaeos mauris placerat ridiculus odio praesentEx urna finibus natoque auctor pretium etiam consequat eleifend himenaeos mauris placerat ridiculus odio praesent.",
+    name: "Jane Doe",
+    role: "Web Developer",
+    image: "/user.jpg",
   },
   {
-    quote:
-      'Vel orci morbi tellus congue erat ridiculus, nec nullam fringilla facilisi tincidunt etiam lorem.',
-    name: 'Rafi Ahmed',
-    role: 'Web Developer',
-    image: '/user.jpg',
-    rating: 5,
-  },
-  {
-    quote:
-      'Tincidunt sagittis primis fusce, senectus senectus varius ullamcorper faucibus imperdiet posuere ridiculus.',
-    name: 'Nazia Rahman',
-    role: 'Data Analyst',
-    image: '/user.jpg',
-    rating: 5,
+    id: 3,
+    quote: "Ex urna finibus natoque auctor pretium etiam consequat eleifend himenaeos mauris placerat ridiculus odio praesent Ex urna finibus natoque auctor pretium etiam consequat eleifend himenaeos mauris placerat ridiculus odio praesentEx urna finibus natoque auctor pretium etiam consequat eleifend himenaeos mauris placerat ridiculus odio praesent",
+    name: "John Smith",
+    role: "UI/UX Designer",
+    image: "/user.jpg",
   },
 ];
 
-export default function TestimonialSection() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % testimonials.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
+const Testimonial = () => {
+  // Slider settings
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+          arrows: false,
+        },
+      },
+    ],
+  };
 
   return (
-    <section className="bg-black text-white">
-      {/* Testimonial Section */}
-      <div className="relative w-full mt-20 md:mt-40 h-[600px] md:h-[500px] flex items-center justify-center overflow-hidden">
-        <Image
-          src="/testi.jpg"
-          alt="Testimonial Background"
-          fill
-          className="object-cover opacity-70"
-        />
+    <div className="bg-black py-12 sm:py-16 md:py-20 lg:py-28">
+      <div
+        className="
+          relative
+          w-full
+          bg-[url('/testi.jpg')]
+          bg-cover
+          bg-center
+          bg-no-repeat
+          flex
+          items-center
+          justify-center
+          min-h-[40vh] sm:min-h-[50vh] md:min-h-[60vh] lg:min-h-[80vh] /* Increased min-height for padding */
+          px-4 sm:px-6 md:px-8
+          py-8 sm:py-12 md:py-16 lg:py-20 /* Added top/bottom padding */
+        "
+      >
+        <div className="absolute inset-0 bg-black/30" />
 
-        <div className="relative z-10 max-w-7xl w-full px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
-          {/* Sliding Card */}
-          <div className="bg-black/70 rounded-lg p-4 sm:p-6 shadow-lg h-fit min-h-[260px] relative">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{ duration: 0.6 }}
-              >
-                <p className="text-xs sm:text-sm leading-relaxed mb-4">
-                  <span className="text-4xl sm:text-6xl text-yellow-400 mr-4 sm:mr-8">“</span>
-                  {testimonials[index].quote}
-                </p>
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0 mt-4">
-                  <div className="flex items-center gap-3">
-                    <Image
-                      src={testimonials[index].image}
-                      alt={testimonials[index].name}
-                      width={50}
-                      height={50}
-                      className="rounded-full"
-                    />
-                    <div>
-                      <p className="text-sm font-semibold text-yellow-400">{testimonials[index].name}</p>
-                      <p className="text-xs text-gray-300">{testimonials[index].role}</p>
-                    </div>
-                  </div>
-                  <div className="text-yellow-400 text-lg">★★★★★</div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Static Text Content */}
-          <div className="text-center md:text-left">
-            <p className="text-yellow-400 font-semibold text-sm mb-1">Testimonial</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">What students say</h2>
-            <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-6">
+        <div className="relative z-10 flex flex-col lg:flex-row-reverse items-center justify-between w-full max-w-6xl gap-8 sm:gap-12 md:gap-16 lg:gap-20">
+          {/* TEXT CONTENT */}
+          <div className="flex flex-col items-start w-full lg:w-1/2 space-y-4 sm:space-y-6 text-left">
+            <h2 className="text-yellow-400 text-2xl sm:text-3xl md:text-4xl font-extrabold font-gucina">
+              Testimonial
+            </h2>
+            <h3 className="text-white text-xl sm:text-2xl md:text-3xl font-bold font-gucina">
+              What Students Say
+            </h3>
+            <p className="text-white text-sm sm:text-base md:text-lg font-light lexend-body hover:underline-yellow">
               Ex urna finibus natoque auctor pretium etiam consequat eleifend himenaeos mauris
-              placerat ridiculus odio praesent. Ex urna finibus natoque auctor pretium etiam consequat
-              eleifend himenaeos mauris placerat ridiculus odio praesent.
+              placerat ridiculus odio praesent. Ex urna finibus natoque auctor pretium etiam
+              consequat eleifend himenaeos mauris placerat ridiculus odio praesent.
             </p>
-            <button className="bg-yellow-400 text-black px-4 sm:px-6 py-2 rounded-full font-semibold hover:bg-yellow-300 transition">
+            <button
+              className="
+                border border-[#FFD700] rounded-full py-2 px-6 sm:px-8
+                bg-[#FFD700] text-black text-sm sm:text-base
+                hover:bg-transparent hover:text-[#FFD700] transition-colors
+              "
+            >
               View All Testimonial
             </button>
           </div>
-        </div>
-      </div>
-      {/* Bottom Help Section */}
-      <div className="relative w-full h-[300px] sm:h-[250px] flex items-center overflow-hidden mt-20 md:mt-40">
-        <Image
-          src="/bg-2.jpg"
-          alt="Help Background"
-          fill
-          className="object-cover opacity-60"
-        />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center w-full text-center md:text-left">
-          <div className="mb-4 md:mb-0">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Need Help?</h2>
-            <p className="text-gray-300 text-sm max-w-xl mx-auto md:mx-0">
-              Join the Learning Party Now – No Boring Stuff Allowed. Join the Learning Party Now – No
-              Boring Stuff Allowed.
-            </p>
+
+          {/* TESTIMONIAL SLIDER */}
+          <div className="flex flex-col items-start w-full lg:w-1/2 space-y-4 sm:space-y-6">
+            <Slider {...settings} className="w-full">
+              {testimonials.map((testimonial) => (
+                <div key={testimonial.id} className="px-2">
+                  <div className="relative flex p-4 sm:p-6 rounded-[10px] shadow-lg bg-[#141414] w-full h-auto gap-4 items-start">
+                    <img
+                      src="/66.QuoteRight.png"
+                      alt="Quote"
+                      className="w-8 h-8 sm:w-10 sm:h-10 object-contain flex-shrink-0" /* Increased size */
+                      loading="lazy"
+                    />
+                    <div className="flex flex-col justify-between w-full relative">
+                      <div className="absolute top-0 right-0 mt-2 mr-2 flex space-x-1">
+                        {[...Array(5)].map((_, i) => (
+                          <svg
+                            key={i}
+                            className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        ))}
+                      </div>
+                      <p className="text-white text-xs sm:text-sm font-light lexend-body mt-6 sm:mt-8 leading-relaxed text-left hover:underline-yellow">
+                        {testimonial.quote}
+                      </p>
+                      <div className="flex items-center space-x-3 mt-4">
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover flex-shrink-0" /* Increased size */
+                          loading="lazy"
+                        />
+                        <div>
+                          <h3 className="text-yellow-400 text-sm sm:text-base font-bold font-gucina text-left">
+                            {testimonial.name}
+                          </h3>
+                          <p className="text-white text-xs sm:text-sm font-light lexend-body text-left">
+                            {testimonial.role}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
           </div>
-          <button className="bg-yellow-400 text-black px-5 py-2 rounded-full font-semibold hover:bg-yellow-200 transition">
-            Contact Us
-          </button>
         </div>
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default Testimonial;

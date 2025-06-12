@@ -43,38 +43,38 @@ export default function UpcomingEvents() {
   ];
 
   return (
-    <section className="bg-black  text-white py-16">
-      <div className="w-full text-center">
+    <section className="bg-black text-white py-16">
+      <div className="w-full xl:max-w-7xl xl:mx-auto xl:px-0 px-4 text-left xl:text-center">
         {/* Heading */}
         <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
           Upcoming <span className="underline decoration-yellow-400">Events</span>
         </h2>
-        <p className="max-w-2xl mx-auto text-gray-300 mb-12 text-sm md:text-base px-2">
+        <p className="max-w-2xl xl:mx-auto text-gray-300 mb-12 text-sm md:text-base">
           Well, because we’re not your grandma’s boring old school! At Edu-Den, we’re the rebels of education, the
           mavericks of learning, and the champions of fun-filled knowledge. We’ll teach you how to slay dragons and code
           websites, all while cracking jokes and sipping on virtual coffee.
         </p>
 
         {/* Cards Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 px-2">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {events.map((event, index) => (
             <div
               key={index}
-              className="relative rounded-xl overflow-hidden shadow-lg group transition duration-300 transform hover:scale-105 hover:shadow-2xl"
+              className="relative rounded-xl overflow-hidden shadow-lg group transition duration-300"
             >
-              {/* Background Image */}
-              <div className="relative h-[350px] md:h-[450px] w-full">
+              {/* Background Image with Zoom Only */}
+              <div className="relative h-[350px] md:h-[450px] w-full overflow-hidden">
                 <Image
                   src={event.image}
                   alt={event.title}
                   fill
-                  className="object-cover transition duration-300 group-hover:brightness-110"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/30 to-transparent transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/30 to-transparent" />
               </div>
 
               {/* Event Info */}
-              <div className="absolute bottom-0 w-full px-4 sm:px-6 pb-10 text-white z-10 flex flex-col items-center text-center">
+              <div className="absolute bottom-0 w-full px-4 sm:px-6 pb-10 text-white z-10 flex flex-col items-start xl:items-center text-left xl:text-center">
                 <h3 className="text-xl md:text-2xl font-bold">{event.title}</h3>
                 <p className="text-xs md:text-sm text-white mt-3 leading-snug">
                   Fermentum fusce himenaeos neque condimentum maecenas vitae congue iaculis inceptos ullamcorper habitasse

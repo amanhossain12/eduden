@@ -3,6 +3,9 @@
 import Navbar from './_componantes/Navbar';
 import HeroSlider from './_componantes/HeroSlider';
 import Aboutsec from './_componantes/Aboutsec';
+// import Aboutuss from './_componantes/Aboutuss';
+
+
 import CourseCategories from './_componantes/CourseCategories';
 import StudentPlacement from './_componantes/StudentPlacement';
 import AllCourses from './_componantes/allcourse';
@@ -13,6 +16,8 @@ import TestimonialSection from './_componantes/TestimonialSection';
 import FaqSection from './_componantes/FaqSection';
 import Footer from './_componantes/footer';
 import Girl from './_componantes/Girl';
+import Aboutus from './_componantes/Aboutuss';
+import Aboutus_Text from './_componantes/Aboutuss';
 
 const Page = () => {
   return (
@@ -27,9 +32,11 @@ const Page = () => {
           <HeroSlider />
         </div>
 
-        <div className="mt-[100px]">
+      {/* <Aboutuss/> */}
+
+         <div className="mt-[100px]"> 
           <Aboutsec />
-        </div>
+        </div> 
 
         <div className="mt-[100px]">
           <CourseCategories />
@@ -44,7 +51,7 @@ const Page = () => {
         </div>
       </div>
 
-      {/* ❗ Videopic full width (outside padding) */}
+      {/* Videopic full width (outside padding) */}
       <div className="mt-[100px]">
         <Videopic />
       </div>
@@ -56,7 +63,7 @@ const Page = () => {
         </div>
       </div>
 
-      {/* ❗ Girl section full width */}
+      {/*  Girl section full width */}
       <Girl />
 
       {/* Back to padded content */}

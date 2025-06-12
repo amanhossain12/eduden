@@ -99,17 +99,20 @@ export default function AllCourses() {
       : courses.filter((course) => course.category === selectedCategory);
 
   return (
-    <section className="bg-black  text-white py-16">
-      <div className="w-full">
-        <div className="mb-10 text-center">
-          <p className="text-yellow-400 uppercase text-sm">Popular Courses</p>
-          <div className="group inline-block">
-            <h2 className="text-3xl sm:text-4xl font-bold">
-              All <span className="text-yellow-400">Courses</span>
-            </h2>
-            <div className="h-1 bg-yellow-400 w-20 mx-auto mt-2 transition-all duration-300 group-hover:w-40 rounded-full"></div>
-          </div>
-        </div>
+   
+      <section className="bg-black text-white py-16">
+  <div className="w-full">
+    {/* Heading updated for left-align till lg, center from xl */}
+    <div className="mb-10 text-left xl:text-center px-4 xl:px-0 max-w-7xl mx-auto">
+      <p className="text-yellow-400 uppercase text-sm">Popular Courses</p>
+      <div className="group inline-block">
+        <h2 className="text-3xl sm:text-4xl font-bold">
+          All <span className="text-yellow-400">Courses</span>
+        </h2>
+        <div className="h-1 bg-yellow-400 w-20 mt-2 transition-all duration-300 group-hover:w-40 rounded-full"></div>
+      </div>
+    </div>
+
 
         {/* Dropdown Filter for small to large screens */}
     <div className="block xl:hidden mb-10 px-4">

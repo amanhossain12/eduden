@@ -11,16 +11,33 @@ import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/f
 const HeroSlider = () => {
   return (
     <div className="relative bg-black">
+      {/* ← → Custom Arrows at Bottom Left and Right */}
+      <div className="absolute bottom-6 w-full px-6 flex justify-between items-center z-40">
+        <button
+          id="custom-prev"
+          className="text-white text-2xl sm:text-3xl font-bold  bg-opacity-50 hover:bg-opacity-70 rounded-full px-4 py-2 transition"
+        >
+          ←
+        </button>
+        <button
+          id="custom-next"
+          className="text-white text-2xl sm:text-3xl font-bold  bg-opacity-50 hover:bg-opacity-70 rounded-full px-4 py-2 transition"
+        >
+          →
+        </button>
+      </div>
+
       {/* Swiper Slider */}
       <Swiper
         modules={[Navigation, Autoplay, Pagination]}
-        navigation
+        navigation={{
+          prevEl: '#custom-prev',
+          nextEl: '#custom-next',
+        }}
         autoplay={{ delay: 4000 }}
         loop
         pagination={{ clickable: true }}
-        
         className="swiper-with-bottom-nav"
-
       >
         {[1, 2, 3].map((_, index) => (
           <SwiperSlide key={index}>

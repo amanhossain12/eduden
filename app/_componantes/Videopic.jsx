@@ -6,7 +6,7 @@ export default function VideoSection() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section className="relative w-auto  h-[50vh] sm:h-screen mt-24 sm:mt-40  flex items-center justify-center overflow-hidden">
+    <section className="relative   h-[50vh] sm:h-screen mt-24 sm:mt-40  flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <Image
         src="/video-pic.jpg" // Replace with your image path
@@ -18,7 +18,7 @@ export default function VideoSection() {
 
       {/* Play Button */}
       <div
-        className="absolute z-10 cursor-pointer group"
+        className="absolute  z-10 cursor-pointer group"
         onClick={() => setIsOpen(true)}
       >
         <div className="w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] rounded-full border-4 border-white flex items-center justify-center transition-transform group-hover:scale-105">
@@ -26,26 +26,26 @@ export default function VideoSection() {
         </div>
       </div>
 
-      {/* Modal Video Popup */}
-      {isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
-          <div className="relative w-full max-w-4xl aspect-video">
-            <iframe
-              className="w-full h-full rounded-lg"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-              title="YouTube video"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            />
-            <button
-              onClick={() => setIsOpen(false)}
-              className="absolute top-2 right-4 text-white text-3xl font-bold"
-            >
-              &times;
-            </button>
-          </div>
-        </div>
-      )}
+     {isOpen && (
+  <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-0 m-0">
+    <div className="relative w-full h-screen">
+      <iframe
+        className="w-full h-full"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+        title="YouTube video"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+      />
+      <button
+        onClick={() => setIsOpen(false)}
+        className="absolute top-4 right-6 text-white text-4xl font-bold z-10"
+      >
+        &times;
+      </button>
+    </div>
+  </div>
+)}
+
     </section>
   );
 }

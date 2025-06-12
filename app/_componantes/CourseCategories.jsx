@@ -63,15 +63,17 @@ const categories = [
 
 export default function CourseCategories() {
   return (
-    <section className="bg-black  text-white pt-16">
-      <div className="text-center w-full">
+    <section className="bg-black text-white pt-16">
+      {/* Heading */}
+      <div className="w-full text-left xl:text-center px-4 xl:px-0 max-w-7xl mx-auto">
         <p className="text-yellow-400 uppercase text-sm mb-2">Popular Categories</p>
         <h2 className="text-3xl sm:text-4xl font-bold mb-10">
           Course <span className="underline decoration-yellow-400">Categories</span>
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-0.5 w-full">
+      {/* Grid */}
+      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-0.5 w-full max-w-7xl mx-auto px-4 xl:px-0">
         {categories.map((cat, idx) => (
           <div
             key={idx}
