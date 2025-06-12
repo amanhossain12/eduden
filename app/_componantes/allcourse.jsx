@@ -5,8 +5,7 @@ import { useState } from 'react';
 import { FaStar, FaUser, FaClock, FaComment } from 'react-icons/fa';
 
 const courses = [
-  // ... same as before ...
-    {
+  {
     id: 1,
     category: 'UI/UX Design',
     title: 'UI/UX Design for Web and Mobile for Kids',
@@ -99,55 +98,55 @@ export default function AllCourses() {
       : courses.filter((course) => course.category === selectedCategory);
 
   return (
-   
-      <section className="bg-black text-white py-16">
-  <div className="w-full">
-    {/* Heading updated for left-align till lg, center from xl */}
-    <div className="mb-10 text-left xl:text-center px-4 xl:px-0 max-w-7xl mx-auto">
-      <p className="text-yellow-400 uppercase text-sm">Popular Courses</p>
-      <div className="group inline-block">
-        <h2 className="text-3xl sm:text-4xl font-bold">
-          All <span className="text-yellow-400">Courses</span>
-        </h2>
-        <div className="h-1 bg-yellow-400 w-20 mt-2 transition-all duration-300 group-hover:w-40 rounded-full"></div>
-      </div>
-    </div>
-
-
-        {/* Dropdown Filter for small to large screens */}
-    <div className="block xl:hidden mb-10 px-4">
-  <select
-    value={selectedCategory}
-    onChange={(e) => setSelectedCategory(e.target.value)}
-    className="bg-black border border-yellow-400 text-white px-4 py-2 rounded-full w-full"
-  >
-    {allCategories.map((cat) => (
-      <option key={cat} value={cat}>
-        {cat}
-      </option>
-    ))}
-  </select>
-</div>
-
-
-        {/* Button Filter for xl and up */}
-        <div className="hidden xl:flex flex-wrap gap-3 mb-10 px-4">
-          {allCategories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-1 rounded-full text-sm font-semibold border transition-all duration-300 ${
-                selectedCategory === cat
-                  ? 'bg-yellow-500 text-black'
-                  : 'border-white text-white hover:bg-yellow-400 hover:text-black'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+    <section className="bg-black text-white py-16">
+      <div className="w-full">
+        {/* Heading updated for left-align till lg, center from xl */}
+        <div className="mb-10 text-left xl:text-center px-4 xl:px-0 max-w-7xl mx-auto">
+          <p className="text-yellow-400 uppercase text-sm">Popular Courses</p>
+          <div className="group inline-block">
+            <h2 className="text-3xl sm:text-4xl font-bold">
+              All <span className="text-yellow-400">Courses</span>
+            </h2>
+            <div className="h-1 bg-yellow-400 w-20 mt-2 transition-all duration-300 group-hover:w-40 rounded-full"></div>
+          </div>
         </div>
 
-        {/* Course Cards */}
+        {/* Filter Section */}
+        <div className="mb-10 px-4">
+          {/* Dropdown for <xl */}
+          <div className="block xl:hidden">
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="bg-black border border-yellow-400 text-white px-4 py-2 rounded-full w-full"
+            >
+              {allCategories.map((cat) => (
+                <option key={cat} value={cat}>
+                  {cat}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Buttons for xl+ */}
+          <div className="hidden xl:flex flex-wrap gap-3 mt-4">
+            {allCategories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-4 py-1 rounded-full text-sm font-semibold border transition-all duration-300 ${
+                  selectedCategory === cat
+                    ? 'bg-yellow-500 text-black'
+                    : 'border-white text-white hover:bg-yellow-400 hover:text-black'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Course Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4">
           {filteredCourses.map((course) => (
             <div
